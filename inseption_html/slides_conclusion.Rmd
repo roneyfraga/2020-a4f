@@ -1,0 +1,14 @@
+---
+output:
+  revealjs::revealjs_presentation:
+    center: true
+---
+
+
+## developing...
+
+## 
+
+![](../img/mesa_trabalho.jpg)
+
+

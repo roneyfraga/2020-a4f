@@ -1,0 +1,21 @@
+Group;Description
+g01;General purpose knowlodge.
+g02;Non-thermal processes.
+g03;Active food packaging technologies (chitosan, nanotechnology, essential oils, edible film).
+g04;Edible coatings (postharvest, edible film, alginate, respiration).
+g05;Quality and shelf life of meats (lipid oxidation, antioxidant).
+g06;Microbial shelf life in bakery products (lactic acid bacteria, sourdough, biopreservation, rheology, exopolysaccharides).
+g07;Predictive methods (predictive microbiology, modeling).
+g08;Lipid oxidation.
+g09;Food irradiation (mushrooms, electron beam).
+g10;Probiotics and bacteriocins.
+g11;Listeria monocytogenes studies.
+g12;Studies fluid milk processing systems (microfiltration, pasteurization, proteolysis).
+g13;Storage stability. 
+g14;Essential oils as food preservatives based on antifungal, antiaflatoxin, antioxidant activities.
+g15;Osmotic dehydration of fruits and vegetables (storage, controlled atmosphere).
+g16;Cold plasma and oxidative stability.
+g17;To be defined.
+g18;Cheese studies.
+g19;Egg quality.
+g20;Oxidation studies.

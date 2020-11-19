@@ -199,7 +199,6 @@ visNetwork(authorNet$nodes, authorNet$edges, height = "750px", width='500px') %>
 
 
 ```{r}
-# import('data/authorProd_g05.rds') %>>% (. -> authorProd)
 # authorProd$graph
 knitr::include_graphics('img/top_authors_g03.png')
 ```
@@ -239,6 +238,172 @@ visNetwork(countryNet$nodes, countryNet$edges, height = "750px", width='500px') 
 import('data/netcit_hubs_full_info.xlsx') %>>% 
     as_tibble %>>% 
     dplyr::filter(grupo=='g03') %>>% 
+    rename(Group = grupo) %>>% 
+    relocate(AU,.after=Group) %>>% 
+    select(-SR) %>>% 
+    slice(1:50) %>>% 
+    (. -> papersHub)
+
+papersHub  %>>% 
+    datatable(
+              rownames = FALSE,
+              extensions = 'Buttons', 
+              options = list( 
+                             dom = 'Bfrtip',
+                             columnDefs = list(list(visible=FALSE, targets=c(3:4,8:10))), 
+                             buttons = list(list(extend = 'colvis', columns = c(0:(ncol(papersHub)-1)))
+                             )
+              )
+    )
+
+```
+
+<!--  ------------------------------------------------------------ -->
+
+# g06 {data-navmenu="Groups"}
+
+<h4> Group g06 - Microbial shelf life in bakery products </h4>
+
+Column {data-width=500 .tabset}
+-------------------------------------
+
+### Authors Network
+
+
+```{r}
+import('data/authorNet_g06.rds') %>>% (. -> authorNet)
+
+visNetwork(authorNet$nodes, authorNet$edges, height = "750px", width='500px') %>>%
+    visIgraphLayout(layout = "layout_with_kk")  %>>%
+    visOptions(highlightNearest = TRUE)
+```
+
+### Authors Production 
+
+
+```{r}
+# authorProd$graph
+knitr::include_graphics('img/top_authors_g06.png')
+```
+
+### Authors
+
+```{r}
+import('data/indices_g06.rds') %>>% 
+    mutate(m_index=round(m_index,2)) %>>% 
+    (kable(.,'html')) %>>% 
+    kable_styling() %>>% 
+    scroll_box(width = "100%", height = "460px")
+```
+
+<h5> H-index is defined as the maximum value of h such that the given author/journal has published h papers that have each been cited at least h times. </h5> 
+<h5> G-index is an improvement of the h-index. If this set is ranked in decreasing order of the number of citations that they received, the g-index is the (unique) largest number such that the top g articles received (together) at least g2 citations.   </h5> 
+<h5> M-Index is the H-index divided by the number of years that a scientist has been active. </h5> 
+
+Column {data-width=500 .tabset}
+-------------------------------------
+
+
+### Countries Network
+
+```{r}
+
+import('data/countryNet_g06.rds') %>>% (. -> countryNet)
+
+visNetwork(countryNet$nodes, countryNet$edges, height = "750px", width='500px') %>>% 
+    visIgraphLayout(layout = "layout_with_fr")  %>>% 
+    visOptions(highlightNearest = TRUE)
+```
+
+### Papers Hubs
+
+```{r eval=T}
+import('data/netcit_hubs_full_info.xlsx') %>>% 
+    as_tibble %>>% 
+    dplyr::filter(grupo=='g06') %>>% 
+    rename(Group = grupo) %>>% 
+    relocate(AU,.after=Group) %>>% 
+    select(-SR) %>>% 
+    slice(1:50) %>>% 
+    (. -> papersHub)
+
+papersHub  %>>% 
+    datatable(
+              rownames = FALSE,
+              extensions = 'Buttons', 
+              options = list( 
+                             dom = 'Bfrtip',
+                             columnDefs = list(list(visible=FALSE, targets=c(3:4,8:10))), 
+                             buttons = list(list(extend = 'colvis', columns = c(0:(ncol(papersHub)-1)))
+                             )
+              )
+    )
+
+```
+
+<!--  ------------------------------------------------------------ -->
+
+# g08 {data-navmenu="Groups"}
+
+<h4> Group g08 - Lipid oxidation </h4>
+
+Column {data-width=500 .tabset}
+-------------------------------------
+
+### Authors Network
+
+
+```{r}
+import('data/authorNet_g08.rds') %>>% (. -> authorNet)
+
+visNetwork(authorNet$nodes, authorNet$edges, height = "750px", width='500px') %>>%
+    visIgraphLayout(layout = "layout_with_kk")  %>>%
+    visOptions(highlightNearest = TRUE)
+```
+
+### Authors Production 
+
+
+```{r}
+# authorProd$graph
+knitr::include_graphics('img/top_authors_g08.png')
+```
+
+### Authors
+
+```{r}
+import('data/indices_g08.rds') %>>% 
+    mutate(m_index=round(m_index,2)) %>>% 
+    (kable(.,'html')) %>>% 
+    kable_styling() %>>% 
+    scroll_box(width = "100%", height = "460px")
+```
+
+<h5> H-index is defined as the maximum value of h such that the given author/journal has published h papers that have each been cited at least h times. </h5> 
+<h5> G-index is an improvement of the h-index. If this set is ranked in decreasing order of the number of citations that they received, the g-index is the (unique) largest number such that the top g articles received (together) at least g2 citations.   </h5> 
+<h5> M-Index is the H-index divided by the number of years that a scientist has been active. </h5> 
+
+Column {data-width=500 .tabset}
+-------------------------------------
+
+
+### Countries Network
+
+```{r}
+
+import('data/countryNet_g08.rds') %>>% (. -> countryNet)
+
+visNetwork(countryNet$nodes, countryNet$edges, height = "750px", width='500px') %>>% 
+    visIgraphLayout(layout = "layout_with_fr")  %>>% 
+    visOptions(highlightNearest = TRUE)
+```
+
+### Papers Hubs
+
+```{r eval=T}
+import('data/netcit_hubs_full_info.xlsx') %>>% 
+    as_tibble %>>% 
+    dplyr::filter(grupo=='g08') %>>% 
     rename(Group = grupo) %>>% 
     relocate(AU,.after=Group) %>>% 
     select(-SR) %>>% 

@@ -16,7 +16,7 @@ open:
 	qutebrowser $(file).html &
 
 rsync_html:
-	rsync -r -a -v -P -e ssh  $(file).html bibr@159.89.36.185:/var/www/roneyfraga.com/public_html/dash/2020_A4F/
+	rsync -r -a -v -P -e ssh  $(file).html bibr@159.89.36.185:/var/www/roneyfraga.com/public_html/dash/2020-a4f/
 
 rsync_files:
 	rsync -avzhe ssh --info=progress2 --delete files_$(file)/ bibr@159.89.36.185:/var/www/roneyfraga.com/public_html/dash/$(file)/
